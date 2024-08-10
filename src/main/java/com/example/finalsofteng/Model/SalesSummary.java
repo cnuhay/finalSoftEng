@@ -1,5 +1,5 @@
 package com.example.finalsofteng.Model;
-
+// https://github.com/cnuhay/finalSoftEng
 public class SalesSummary {
     private String salesmanName;
     private int washingMachineSales;

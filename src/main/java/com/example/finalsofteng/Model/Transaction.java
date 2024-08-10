@@ -3,7 +3,7 @@ package com.example.finalsofteng.Model;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+// https://github.com/cnuhay/finalSoftEng
 public class Transaction {
     private Long transactionId;
     private String salesmanName;
