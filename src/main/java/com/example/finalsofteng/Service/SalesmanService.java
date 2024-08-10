@@ -14,23 +14,23 @@ public class SalesmanService {
     @Autowired
     private SalesmanRepository salesmanRepository;
 
-    // Mevcut işlemleri getirme
+    // Return All Transaction on DB
     public List<SalesmanEntity> getAllTransactions() {
         return salesmanRepository.findAll();
     }
 
-    // Yeni işlem kaydetme
+    // Insert transaction to DB
     public void saveTransaction(SalesmanEntity salesmanEntity) {
         salesmanRepository.save(salesmanEntity);
     }
 
-    // ID ile işlem getirme
+    // Return transaction filtered by ID
     public SalesmanEntity getTransactionById(Long id) {
         Optional<SalesmanEntity> transaction = salesmanRepository.findById(id);
-        return transaction.orElse(null); // Veya uygun bir hata işleme stratejisi
+        return transaction.orElse(null);
     }
 
-    // İşlemi güncelleme
+    // Updates transaction
     public void updateTransaction(SalesmanEntity transaction) {
         if (salesmanRepository.existsById(transaction.getTransactionId())) {
             salesmanRepository.save(transaction);
@@ -38,6 +38,7 @@ public class SalesmanService {
             throw new RuntimeException("Transaction not found");
         }
     }
+    // Deletes transaction
     public void deleteTransaction(Long transactionId) {
         salesmanRepository.deleteById(transactionId);
     }

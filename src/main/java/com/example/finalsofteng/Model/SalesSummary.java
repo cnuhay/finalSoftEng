@@ -6,7 +6,7 @@ public class SalesSummary {
     private int refrigeratorSales;
     private int musicSystemSales;
 
-    // Constructor, Getter ve Setter metodları
+    // Constructor, Getter ve Setters
     public SalesSummary(String salesmanName, int washingMachineSales, int refrigeratorSales, int musicSystemSales) {
         this.salesmanName = salesmanName;
         this.washingMachineSales = washingMachineSales;
@@ -14,7 +14,6 @@ public class SalesSummary {
         this.musicSystemSales = musicSystemSales;
     }
 
-    // Getter ve Setter metodları burada yer alacak
     public String getSalesmanName() { return salesmanName; }
     public int getWashingMachineSales() { return washingMachineSales; }
     public int getRefrigeratorSales() { return refrigeratorSales; }

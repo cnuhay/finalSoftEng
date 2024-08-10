@@ -22,7 +22,7 @@ public class Transaction {
         this.transactionDate = transactionDate;
     }
 
-    // Getter ve Setter metodları
+    // Getter ve Setter
     public Long getTransactionId() { return transactionId; }
     public String getSalesmanName() { return salesmanName; }
     public String getItemType() { return itemType; }

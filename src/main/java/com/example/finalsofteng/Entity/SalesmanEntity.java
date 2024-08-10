@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.Date;
+
 // https://github.com/cnuhay/finalSoftEng
 @Entity
 @Table(name="salesman")

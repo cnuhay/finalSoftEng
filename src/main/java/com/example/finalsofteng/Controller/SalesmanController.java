@@ -19,6 +19,11 @@ public class SalesmanController {
     //github link: https://github.com/cnuhay/finalSoftEng
     @Autowired
     private SalesmanService salesmanService;
+    //Localhost:8080/ redirects to /sales
+    @GetMapping("/")
+    public String home() {
+        return "redirect:/sales"; // sales sayfasına yönlendirir
+    }
 
     @GetMapping("/sales")
     public String getSalesPage(Model model) {
