@@ -38,4 +38,7 @@ public class SalesmanService {
             throw new RuntimeException("Transaction not found");
         }
     }
+    public void deleteTransaction(Long transactionId) {
+        salesmanRepository.deleteById(transactionId);
+    }
 }
