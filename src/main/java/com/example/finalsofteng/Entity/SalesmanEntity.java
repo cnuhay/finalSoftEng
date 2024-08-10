@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -15,9 +16,9 @@ import java.util.Date;
 public class SalesmanEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private double amount;
-    private Date dot;
-    private String item;
-    private String name;
+    private Long transactionId;
+    private String salesmanName;
+    private String itemType;
+    private int salesAmount;
+    private LocalDate transactionDate;
 }

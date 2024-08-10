@@ -103,7 +103,7 @@
                 </div>
                 <div class="form-group flex-fill">
                     <label for="transactionDate">Transaction Date</label>
-                    <input type="date" class="form-control" id="transactionDate" name="transactionDate" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" required>
+                    <input type="date" class="form-control" id="transactionDate" name="transactionDate" th:value="${currentDate}" required>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary btn-save">Save</button>
@@ -126,12 +126,12 @@
             </thead>
             <tbody>
             <!-- Iterate over sales transactions -->
-            <tr th:each="transaction : ${transactions}">
+            <tr th:each="transaction : ${formattedTransactions}">
                 <td th:text="${transaction.transactionId}"></td>
                 <td th:text="${transaction.salesmanName}"></td>
                 <td th:text="${transaction.itemType}"></td>
                 <td th:text="${transaction.salesAmount}"></td>
-                <td th:text="${#dates.format(transaction.transactionDate, 'yyyy-MM-dd')}"></td>
+                <td th:text="${transaction.transactionDate}"></td>
                 <td><a th:href="@{/editTransaction/{id}(id=${transaction.transactionId})}" class="btn btn-success">Edit</a></td>
                 <td><a th:href="@{/deleteTransaction/{id}(id=${transaction.transactionId})}" class="btn btn-danger">Delete</a></td>
             </tr>
