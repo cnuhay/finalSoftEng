@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -76,5 +77,17 @@ public class SalesmanController {
     public String saveTransaction(@ModelAttribute SalesmanEntity salesmanEntity) {
         salesmanService.saveTransaction(salesmanEntity);
         return "redirect:/sales";
+    }
+    @GetMapping("/editTransaction/{id}")
+    public String editTransaction(@PathVariable("id") Long id, Model model) {
+        SalesmanEntity transaction = salesmanService.getTransactionById(id);
+        model.addAttribute("transaction", transaction);
+        return "edit-transaction"; // 'edit-transaction.html' şablonunu döndür
+    }
+
+    @PostMapping("/updateTransaction")
+    public String updateTransaction(@ModelAttribute SalesmanEntity transaction) {
+        salesmanService.updateTransaction(transaction);
+        return "redirect:/sales"; // Güncellenmiş verilerle Sales sayfasına dön
     }
 }
